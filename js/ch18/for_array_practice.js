@@ -1,8 +1,10 @@
-const words = ['hello', 'js', 'array', 'loop'];
-const arr = [];
+const numbers = [3, 17, 2, 8, 25, 10];
 
-for(let i = 0; i < words.length; i++){
-    arr.push(words[i].length);
+let max = numbers[0];
+
+for (let i = 1; i < numbers.length; i++){
+    if (numbers[i] > max) {
+        max =+ numbers[i]
+    }
 }
-
-console.log(arr);
+console.log("최댓값:", max)
