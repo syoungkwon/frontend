@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc.html</title>
+</head>
+
+<body>
+    <div>
+        n1: <input type="number" id="n1">
+        <br>
+        n2: <input type="number" id="n2">
+        <button id="btn_add">더하기</button>
+        <button id="btn_multiply">곱하기</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        const $inputN1 = document.querySelector('#n1');
+        const $inputN2 = document.querySelector('#n2');
+        const $btnAdd = document.querySelector('#btn_add');
+        const $btnMultiply = document.querySelector('#btn_multiply');
+        const $result = document.querySelector('#result');
+
+        console.log($inputN1, $inputN2, $btnAdd);
+
+        //event (~할때)
+        // 이벤트 바인딩 (이벤트+ 함수 묶는다)
+        // 특정 이벤트가 발생되면 함수가 실행되게 세팅한다.
+        // $btnAdd 버튼 객체에 click 이벤트 바인딩
+        // addEventListener 메소드에는 아규먼트 2개를 보내야 한다.
+        // 첫번째 값: 이벤트 이름(문자열)
+        // 두번째 값: 함수 주소값
+        $btnAdd.addEventListener('click', function () {//익명함수
+            //alert('더하기 버튼 클릭');
+
+            const n1 = $inputN1.value;
+            const n2 = $inputN2.value;
+            // const n1 = Number($inputN1.value);
+            // const n2 = Number($inputN2.value);
+            //element.value가 가져오는 값은 무조건 문자열
+            // 숫자로 바꿔줄 필요가 있음 parseInt(), Number()
+
+            console.log(`n1: ${n1}, n2: ${n2}`);
+
+            const addValue = Number(n1) + Number(n2);
+            $result.innerText = "n1 + n2 = " + addValue;
+        });
+        $btnMultiply.addEventListener('click', () => {
+            const n1 = $inputN1.value;
+            const n2 = $inputN2.value;
+
+            const multiplyValue = Number(n1) * Number(n2);
+            $result.innerText = "n1 X n2 = " + multiplyValue;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Gothic+Coding&display=swap');
+:root{
+    --color-main:#ff4200;
+    --color-sub:#00a200;
+    --color-dark:#2f4858;
+    --color-emph:#f10f5f;
+    --color-text:#281812;
+    --color-lighter:#dc9c86;
+    --color-light-bd:#ffe6d6;
+    --color-light-bg:#fff5ed;
+
+    
+}
