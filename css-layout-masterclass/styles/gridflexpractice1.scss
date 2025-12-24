@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  padding: 30px;
+}
+.practice1 {
+  padding: 20px;
+  width: 400px;
+  height: 800px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  nav {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    li {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+      padding: 0.6em 0.7em;
+      &:first-child {
+        color: #000;
+        background-color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
+main {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 3% 0;
+
+  .box {
+    @mixin box($bgColor) {
+      padding: 15px;
+      border-radius: 20px;
+      text-overflow: ellipsis;
+      color: #000;
+      background-color: $bgColor;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @content;
+    }
+    &:nth-of-type(1) {
+      @include box(rgba(255, 255, 255, 0.1));
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    &:nth-of-type(2) {
+      @include box(#fff);
+    }
+    &:nth-of-type(3) {
+      @include box(#fdffd6) {
+        grid-column: 1 / -1;
+        .title{font-size: 45px;}
+      }
+    }
+    &:nth-of-type(4) {
+      @include box(#dcc8ff);
+    }
+    &:nth-of-type(5) {
+      @include box(#fdc3c3);
+    }
+    &:nth-of-type(6) {
+      @include box(#cdffd3) {
+        grid-column: 1 / -1;
+        .title{font-size: 45px;}
+      }
+    }
+    .title {
+      font-family: "EB Garamond", serif;
+      line-height: 1.05;
+      font-size: 35px;
+    }
+    .bar {
+      margin-top: 15px;
+      span {
+        color: #fff;
+        margin-bottom: -15px;
+        display: block;
+      }
+      progress {
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-top: -10px;
+        &::-webkit-progress-value {
+          border-radius: 5px;
+          background-color: #fff;
+        }
+        &::-webkit-progress-bar {
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+    .bottom {
+      display:flex;
+      justify-content: space-between;
+      > span {
+        @mixin spanDesign($bgColor) {
+          font-weight: 600;
+          display: inline-block;
+          color: #000;
+          background-color: $bgColor;
+          padding: 5px 10px;
+          border-radius: 15px;
+          font-size: 0.9em;
+          border: 2px solid #000;
+        }
+        &.price {
+          @include spanDesign(#ff72fa);
+        }
+        &.price.free{
+            background-color: #ffc800;
+        }
+        &.number {
+          @include spanDesign(#fff);
+        }
+      }
+    }
+  }
+}
