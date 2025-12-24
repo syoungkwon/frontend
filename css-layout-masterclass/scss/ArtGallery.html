@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+      body {
+        height: 100vh;
+      }
+      nav ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 4px solid #000;
+        border-bottom: 4px solid #000;
+      }
+      nav ul li {
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 13px 25px;
+      }
+      nav ul li:not(:first-child) {
+        border-left: 4px solid #000;
+      }
+      main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      main .item {
+        padding: 15px 20px;
+        border-bottom: 4px solid #000;
+      }
+      main .item:not(:nth-of-type(3n + 1)) {
+        border-left: 4px solid #000;
+      }
+      main .item {
+        align-items: center;
+      }
+      main .item .item__head,
+      main .item .item__tail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+      }
+      main .item .item__img {
+        padding: 35px 0;
+        display: flex;
+        justify-content: center;
+      }
+      main .item .item__img img {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+      }
+      main .item .item__tail .item__btn {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <span>Year: All</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </li>
+        <li>
+          <span>Programme: All</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </li>
+        <li>
+          <span>Themes: All</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </li>
+        <li>
+          <span>Practice: All</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </li>
+        <li>
+          <span>Students</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Kate Bedford</span>
+          <span class="item__cate">PGDIPFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/208" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Patricia Ramos</span>
+          <span class="item__cate">BFA(HONS)</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/201" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Trevor Newman</span>
+          <span class="item__cate">MFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/202" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Kristina Leggett</span>
+          <span class="item__cate">BFA(HONS)</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/203" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">JoAnne Raill</span>
+          <span class="item__cate">PGDIPFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/204" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Emma Chalers</span>
+          <span class="item__cate">MFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/205" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Wendelien Bakker</span>
+          <span class="item__cate">MFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/206" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Mariadelle Gamit</span>
+          <span class="item__cate">BFA(HONS)</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/207" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Tullia Pye</span>
+          <span class="item__cate">BFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/208" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Kate Bedford</span>
+          <span class="item__cate">PGDIPFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/209" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Patricia Ramos</span>
+          <span class="item__cate">BFA(HONS)</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/210" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item__head">
+          <span class="item__author">Trevor Newman</span>
+          <span class="item__cate">MFA</span>
+        </div>
+        <div class="item__img"><img src="https://picsum.photos/320/211" /></div>
+        <div class="item__tail">
+          <span class="item__year">2016</span>
+          <span class="item__btn">Read more</span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

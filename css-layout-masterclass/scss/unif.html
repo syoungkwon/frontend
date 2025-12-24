@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Challenge</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+      @import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
+      body {
+        font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
+          sans-serif;
+        display: grid;
+        grid-template-columns: 1.6fr 65px 1fr;
+        height: 100vh;
+      }
+      main {
+        padding: 0 10px 10px;
+        background-color: #ff7400;
+        display: grid;
+        grid-template-rows: 10px repeat(6, 1fr);
+      }
+      main section {
+        cursor: default;
+        color: red;
+        font-weight: 500;
+        border: 2px solid #ff0000;
+        border-top: 0;
+        display: grid;
+        grid-template-columns: 50px 1fr 280px;
+        position: relative;
+      }
+      main section > :not(:first-child) {
+        border-left: 2px solid #ff0000;
+      }
+      main section .main__category {
+        writing-mode: sideways-lr;
+        display: flex;
+        place-self: center;
+        font-weight: 600;
+        letter-spacing: -1.5px;
+      }
+      main section .main__title {
+        padding: 5px 20px 15px;
+        font-size: 6em;
+        display: flex;
+        align-items: center;
+        letter-spacing: -10px;
+        line-height: 1;
+      }
+      main section .main__info {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+      }
+      main section .main__info .main__info__detail,
+      main section .main__info .main__info__period {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      main section .main__info .main__info__period {
+        border-top: 2px solid #ff0000;
+      }
+      main section .main__info .main__info__period span {
+        display: inline-block;
+        background-color: red;
+        color: #ff7400;
+        padding: 10px;
+        border-radius: 30px;
+        width: 80%;
+      }
+      main section:hover {
+        border-color: #fff;
+        color: #fff;
+      }
+      main section:hover > :not(:first-child) {
+        border-left-color: #fff;
+      }
+      main section:hover .main__info__period {
+        border-color: #fff;
+      }
+      main section:hover .main__info__period span {
+        background-color: #fff;
+      }
+      main section:hover:before {
+        content: "";
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 4px);
+      }
+      .bar {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
+      .bar span {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.7rem;
+        padding: 0.5em 0;
+        letter-spacing: -2px;
+      }
+      .bar span:first-child {
+        background-color: #f0f;
+        writing-mode: vertical-rl;
+      }
+      .bar span:last-child {
+        background-color: #160bff;
+        writing-mode: sideways-lr;
+      }
+      .article {
+        padding: 15px;
+        background-color: red;
+      }
+      .article .article__header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.75em;
+        font-weight: 600;
+        letter-spacing: -3px;
+      }
+      .article .article__header span {
+        display: flex;
+        align-items: center;
+      }
+      .article .article__header span i {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      .article .article__header span:last-child i {
+        background-color: #000;
+      }
+      .article .article__list ul {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .article .article__list ul li {
+        padding: 10px 5px 40px;
+        border-top: 2px solid #000;
+        font-weight: 500;
+        font-size: 1.2em;
+        letter-spacing: -2px;
+      }
+      .article .article__list ul li .article__title {
+        font-weight: 600;
+        font-size: 1.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="main__category"></div>
+        <div class="main__title"></div>
+        <div class="main__info"></div>
+      </section>
+      <section>
+        <div class="main__category">E-Commerce</div>
+        <div class="main__title">UNIF</div>
+        <div class="main__info">
+          <p class="main__info__detail">Design & Development</p>
+          <p class="main__info__period">
+            <span>2014 → Present</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="main__category">Event</div>
+        <div class="main__title">Veuve Clicquot</div>
+        <div class="main__info">
+          <p class="main__info__detail">Website, Initiative Identities</p>
+          <p class="main__info__period">
+            <span>2015 → Present</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="main__category">Artist</div>
+        <div class="main__title">HAIM</div>
+        <div class="main__info">
+          <p class="main__info__detail">
+            Visual Identity, Digital Strategy, Design & Development
+          </p>
+          <p class="main__info__period">
+            <span>2014 → Present</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="main__category">Institutional</div>
+        <div class="main__title">MOCA</div>
+        <div class="main__info">
+          <p class="main__info__detail">Streaming Platform</p>
+          <p class="main__info__period">
+            <span>2016</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="main__category">Studio Project</div>
+        <div class="main__title">Public Access</div>
+        <div class="main__info">
+          <p class="main__info__detail">
+            Website, Streaming Platform, Programming
+          </p>
+          <p class="main__info__period">
+            <span>2015 → Present</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="main__category">Musician</div>
+        <div class="main__title">Kelela</div>
+        <div class="main__info">
+          <p class="main__info__detail">Interacive Microsite</p>
+          <p class="main__info__period">
+            <span>2015</span>
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="bar">
+      <span>Special - Offer, Inc.</span>
+      <span>ⓒ2014 → Forever</span>
+    </div>
+    <div class="article">
+      <header class="article__header">
+        <span> <i></i>Information </span>
+        <span> <i></i>Team </span>
+        <span> <i></i>Press </span>
+      </header>
+      <article class="article__list">
+        <ul>
+          <li>
+            <p class="article__title">Art News</p>
+            <p class="article__detail">
+              Performa Launches Online Platform for Streaming New and Archived
+              Works
+            </p>
+          </li>
+          <li>
+            <p class="article__title">The Guardian</p>
+            <p class="article__detail">
+              Masked balls and gay uprisingsL Queer Maps is a guide to 150 years
+              of LGBTQ history
+            </p>
+          </li>
+          <li>
+            <p class="article__title">Frieze</p>
+            <p class="article__detail">
+              Distibuted DISsent - How dis.art blurs the lines between
+              education, entertainmen and commerce
+            </p>
+          </li>
+          <li>
+            <p class="article__title">It's Nice That</p>
+            <p class="article__detail">
+              Dis.art turns "learning into a Netflix-like experience"
+            </p>
+          </li>
+          <li>
+            <p class="article__title">WWD</p>
+            <p class="article__detail">
+              Art Collective Dis Releases Progressive Video Platform
+            </p>
+          </li>
+          <li>
+            <p class="article__title">Art Net</p>
+            <p class="article__detail">
+              DIS Magazine, New York's Hippest Art Media Outlet, Is Launching a
+              'PBS for Gen Z'
+            </p>
+          </li>
+          <li>
+            <p class="article__title">The New Yorker</p>
+            <p class="article__detail">How to be a Sucessful Black Woman</p>
+          </li>
+          <li>
+            <p class="article__title">Village Voice</p>
+            <p class="article__detail">
+              Martine Syms's Interactive MoMA Installation Explores The Tyranny
+              of Screens
+            </p>
+          </li>
+          <li>
+            <p class="article__title">Kaleidoscope Magazine</p>
+            <p class="article__detail">Martine Syms & Carhartt WIP</p>
+          </li>
+          <li>
+            <p class="article__title">Dazed Magazine</p>
+            <p class="article__detail">Dazed Summer 2017</p>
+          </li>
+          <li>
+            <p class="article__title">Art Forum</p>
+            <p class="article__detail">
+              Martine Syms discusses her Projects exhibition at MoMA
+            </p>
+          </li>
+          <li>
+            <p class="article__title">Culture Type</p>
+            <p class="article__detail">Public Access</p>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </body>
+</html>
